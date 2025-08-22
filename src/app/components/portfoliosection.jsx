@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 function PortfolioSection() {
@@ -68,7 +69,9 @@ function PortfolioSection() {
             className="group relative overflow-hidden rounded-2xl shadow-lg"
           >
             {/* Image */}
-            <img
+            <Image
+              height={384}
+              width={384}
               src={project.image}
               alt={project.title}
               className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"

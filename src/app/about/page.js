@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ShieldCheck, ThumbsUp, Clock, Globe } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const values = [
   {
@@ -26,6 +27,18 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const [bubbles, setBubbles] = useState([]);
+
+  useEffect(() => {
+    const generated = [...Array(30)].map((_, i) => ({
+      id: i,
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * 400,
+      color: i % 3 === 0 ? "bg-blue-400/70" : "bg-white/70",
+    }));
+    setBubbles(generated);
+  }, []);
+
   return (
     <main className="pt-28 bg-gray-950 min-h-screen">
       {/* Hero Section */}
@@ -48,28 +61,25 @@ export default function AboutPage() {
       <section className="max-w-5xl mx-auto px-6 py-24 space-y-12 relative overflow-hidden">
         {/* Floating bubbles */}
         <div className="absolute inset-0 z-0">
-          {[...Array(30)].map((_, i) => {
-            const color = i % 3 === 0 ? "bg-blue-400/70" : "bg-white/70"; // every 3rd bubble light blue
-            return (
-              <motion.div
-                key={i}
-                className={`absolute w-2 h-2 rounded-full ${color}`}
-                initial={{ opacity: 0.4, scale: 1 }}
-                animate={{
-                  opacity: [0.2, 0.8, 0.2],
-                  scale: [1, 1.5, 1],
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * 400,
-                }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 2 + Math.random() * 3,
-                  delay: Math.random() * 2,
-                }}
-              />
-            );
-          })}
+          {bubbles.map((b) => (
+            <motion.div
+              key={b.id}
+              className={`absolute w-2 h-2 rounded-full ${b.color}`}
+              style={{ left: b.x, top: b.y }}
+              initial={{ opacity: 0.4, scale: 1 }}
+              animate={{
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
+                y: [b.y, b.y - 50, b.y],
+              }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 2 + Math.random() * 3,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
         </div>
 
         <motion.div

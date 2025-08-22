@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { FaStar } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -86,7 +87,9 @@ export default function TestimonialsSlider() {
 
               {/* Client info */}
               <div className="flex flex-col items-center">
-                <img
+                <Image
+                  height={384}
+                  width={384}
                   src={t.img}
                   alt={t.name}
                   className="w-16 h-16 rounded-full border-2 border-blue-500 mb-3"

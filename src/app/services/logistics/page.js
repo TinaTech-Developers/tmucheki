@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 import { ShieldCheck, ThumbsUp, Clock, Globe } from "lucide-react";
 import TestimonialsSlider from "@/app/components/testimonialsection";
+import Image from "next/image";
 
 const serviceCategories = [
   {
@@ -142,7 +143,9 @@ export default function ServicesPage() {
                 className="relative z-10 w-80 md:w-96 h-96"
               >
                 <div>
-                  <img
+                  <Image
+                    height={384}
+                    width={384}
                     src={activeImages[i]}
                     alt={cat.category}
                     className="w-full h-96 object-cover rounded-xl shadow-2xl"
@@ -208,7 +211,9 @@ export default function ServicesPage() {
             className="relative flex justify-center"
           >
             <div className="w-[300px] h-[400px] bg-gradient-to-tr from-blue-500/20 to-blue-800/10 rounded-full blur-3xl absolute"></div>
-            <img
+            <Image
+              height={384}
+              width={384}
               src="/man-trucks.jpg"
               alt="Why Choose Us"
               className="relative z-10 w-80 md:w-96 h-96 drop-shadow-2xl object-cover rounded-xl"
@@ -235,8 +240,9 @@ export default function ServicesPage() {
           viewport={{ once: true }}
           className="text-gray-400 mb-8"
         >
-          Contact us today and let's make your business shine!
+          Contact us today and let&apos;s make your business shine!
         </motion.p>
+
         <motion.a
           href="#contact"
           whileHover={{ scale: 1.05 }}

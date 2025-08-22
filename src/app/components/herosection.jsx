@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const floatingShapes = [
   { size: 80, left: "10%", top: "20%", delay: 0 },
@@ -95,7 +96,9 @@ export default function HeroSection() {
           className="relative z-10 w-full h-full"
           style={{ transformStyle: "preserve-3d" }}
         >
-          <img
+          <Image
+            height={384}
+            width={384}
             src="/logo.png"
             alt="Tmucheki Investments Logo"
             className="w-full h-full object-contain"

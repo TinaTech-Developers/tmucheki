@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 // Projects data
 const projectCategories = [
@@ -11,7 +12,6 @@ const projectCategories = [
     category: "Signage",
     projects: [
       { title: "Outdoor Billboard", img: "/signage/IMG-20241023-WA0037.jpg" },
-      // { name: "Pylon Signage", img: "/signage/IMG-20241023-WA0037.jpg" },
       { title: "Vehicle Branding", img: "/SignZoo-Vehicle-Cluster.webp" },
       {
         title: "LED Store Sign",
@@ -55,6 +55,13 @@ const featuredProjects = [
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+    }
+  }, []);
 
   const filteredProjects =
     activeCategory === "All"
@@ -75,6 +82,7 @@ export default function ProjectsPage() {
 
   return (
     <main className="pt-28 bg-gray-950 min-h-screen relative overflow-hidden">
+      {/* Hero Header */}
       <section className="h-72 bg-gray-100 flex flex-col justify-center items-center text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -89,29 +97,30 @@ export default function ProjectsPage() {
           printing, and efficient logistics.
         </p>
       </section>
+
       {/* Hero with animated stars */}
       <section className="h-52 flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-        {/* Stars background */}
         <div className="absolute inset-0 z-0">
-          {[...Array(40)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-white rounded-full"
-              initial={{ opacity: 0.5, scale: 1 }}
-              animate={{
-                opacity: [0.3, 1, 0.3],
-                scale: [1, 1.5, 1],
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * 300,
-              }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 2 + Math.random() * 3,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
+          {windowWidth > 0 &&
+            [...Array(40)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full"
+                initial={{ opacity: 0.5, scale: 1 }}
+                animate={{
+                  opacity: [0.3, 1, 0.3],
+                  scale: [1, 1.5, 1],
+                  x: Math.random() * windowWidth,
+                  y: Math.random() * 300,
+                }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 2 + Math.random() * 3,
+                  delay: Math.random() * 2,
+                }}
+              />
+            ))}
         </div>
 
         <motion.h1
@@ -134,7 +143,9 @@ export default function ProjectsPage() {
           {featuredProjects.map((proj, i) => (
             <div key={i} className="px-4">
               <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
+                  height={384}
+                  width={384}
                   src={proj.img}
                   alt={proj.title}
                   className="w-full h-full object-cover bg-white"
@@ -183,7 +194,9 @@ export default function ProjectsPage() {
               whileHover={{ scale: 1.05 }}
               className="relative overflow-hidden rounded-2xl cursor-pointer group shadow-2xl"
             >
-              <img
+              <Image
+                height={384}
+                width={384}
                 src={proj.img}
                 alt={proj.title}
                 className="w-full h-64 object-cover bg-white transition-transform duration-500 group-hover:scale-110"

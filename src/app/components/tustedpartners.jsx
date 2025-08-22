@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 const partners = [
   { name: "Partner 1", logo: "/zpc.png" },
@@ -64,7 +65,9 @@ export default function TrustedPartnersSlider() {
               className="p-6 flex items-center justify-center"
             >
               <div className="p-4 bg-white max-h-16 w-full rounded-xl flex items-center justify-center border border-blue-500/20 shadow-lg hover:scale-105 transition-transform duration-300">
-                <img
+                <Image
+                  height={384}
+                  width={384}
                   src={p.logo}
                   alt={p.name}
                   className="max-h-16 w-full object-contain"
