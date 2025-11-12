@@ -26,7 +26,7 @@ export default function Navbar() {
         transition={{ duration: 0.6 }}
         className="fixed top-6 left-1/2 transform -translate-x-1/2 z-[200] px-2 w-[95%] md:w-[90%]"
       >
-        <div className="bg-gradient-to-r from-[#0a1a2f]/90 via-[#0f2a4f]/90 to-[#1a3d7c]/90 backdrop-blur-lg rounded-full flex items-center justify-between px-6 md:px-10 py-3 shadow-lg border border-white/10">
+        <div className="bg-gradient-to-r from-[#0a1a2f]/90 via-[#0f2a4f]/90 to-[#1a3d7c]/90 backdrop-blur-lg h-16 flex items-center justify-between px-6 md:px-10 py-3 shadow-lg border border-white/30">
           {/* Logo with visible glow */}
           <Link href="/" className="relative flex items-center gap-3">
             {/* Glow behind logo */}
@@ -56,7 +56,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-10 text-white font-medium relative">
+          <div className="hidden md:flex gap-10 text-white font-medium  relative">
             {navItems.map((item) =>
               item === "Services" ? (
                 <div
@@ -77,7 +77,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute left-0 mt-2 bg-gradient-to-r from-[#0a1a2f]/95 to-[#10335f]/95 backdrop-blur-md rounded-lg shadow-lg p-4 flex flex-col space-y-3 text-sm min-w-[220px] border border-white/10"
+                        className="absolute left-0 mt-2 bg-gradient-to-r from-[#0a1a2f]/95 to-[#10335f]/95 backdrop-blur-md rounded-lg  shadow-lg p-4 flex flex-col space-y-3 text-sm min-w-[220px] border border-white/10"
                       >
                         {serviceItems.map((s) => (
                           <Link

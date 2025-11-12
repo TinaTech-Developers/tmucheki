@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.tmucheki.co.zw
+
+# Sitemaps
+Sitemap: https://www.tmucheki.co.zw/sitemap.xml

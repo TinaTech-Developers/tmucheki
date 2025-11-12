@@ -81,12 +81,27 @@ export default function Footer() {
       {/* Divider */}
       <div className="border-t border-white/10 mt-10"></div>
 
-      {/* Bottom */}
+      {/* Bottom Section */}
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 text-sm">
         <p>
           &copy; {new Date().getFullYear()} Tmucheki Investments. All rights
           reserved.
         </p>
+
+        {/* Developed by */}
+        <p className="text-gray-500 text-sm">
+          Developed by{" "}
+          <a
+            href="https://www.tinasoftnexus.co.zw"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-500 font-medium transition"
+          >
+            Tinasoft Nexus
+          </a>
+        </p>
+
+        {/* Social Icons */}
         <div className="flex gap-4">
           <a href="#" className="hover:text-blue-400 transition">
             <FaFacebookF />

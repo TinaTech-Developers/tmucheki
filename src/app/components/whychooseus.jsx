@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { ShieldCheck, ThumbsUp, Clock, Globe } from "lucide-react";
+import Image from "next/image";
 
 function WhyChooseUs() {
   const points = [
@@ -90,8 +91,11 @@ function WhyChooseUs() {
           className="relative flex justify-center"
         >
           <div className="w-[300px] h-[400px] bg-gradient-to-tr from-blue-500/20 to-blue-800/10 rounded-full blur-3xl absolute"></div>
-          <img
-            src="/man-trucks.jpg"
+          <Image
+            quality={100}
+            width={500}
+            height={600}
+            src="/logistics5.jpeg"
             alt="Why Choose Us"
             className="relative z-10 w-80 md:w-96 h-96 drop-shadow-2xl object-cover"
           />

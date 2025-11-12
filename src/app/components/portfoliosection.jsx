@@ -8,32 +8,28 @@ function PortfolioSection() {
   const projects = [
     {
       title: "Corporate Branding",
-      image: "/man-trucks.jpg",
+      image: "/signage/360_F_410944779_On3gLRf4PIbX1k90hdAGtONK4FpjiQNw.jpg",
       desc: "Complete business branding package with print & digital assets.",
     },
     {
       title: "Billboard Signage",
-      image: "/portfolio/signage.jpg",
+      image: "/signage/IMG-20241023-WA0037.jpg",
       desc: "High-visibility outdoor signage designed to attract attention.",
     },
     {
       title: "Logistics Solutions",
-      image: "/portfolio/logistics.jpg",
+      image: "/logistics/logistics7.jpeg",
       desc: "Safe & timely transport of goods across regional borders.",
     },
-    {
-      title: "Custom Packaging",
-      image: "/portfolio/packaging.jpg",
-      desc: "Branded packaging that boosts your product’s appeal.",
-    },
+
     {
       title: "Event Printing",
-      image: "/portfolio/events.jpg",
+      image: "/gazebo.jpg",
       desc: "Posters, banners & stage branding for events and expos.",
     },
     {
       title: "Vehicle Branding",
-      image: "/portfolio/vehicles.jpg",
+      image: "/SignZoo-Vehicle-Cluster.webp",
       desc: "Professional vehicle wraps for moving brand visibility.",
     },
   ];
@@ -74,7 +70,7 @@ function PortfolioSection() {
               width={384}
               src={project.image}
               alt={project.title}
-              className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110 bg-white"
             />
 
             {/* Overlay */}

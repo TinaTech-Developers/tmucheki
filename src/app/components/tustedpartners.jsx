@@ -8,12 +8,8 @@ import Image from "next/image";
 const partners = [
   { name: "Partner 1", logo: "/zpc.png" },
   { name: "Partner 2", logo: "/Masimba_holdings-46.png" },
-  { name: "Partner 3", logo: "/TINASOFT.jpgpartner3.png" },
+  { name: "Partner 3", logo: "/TINASOFT.jpg" },
   { name: "Partner 4", logo: "/Logo_The_BOC_Group.svg.png" },
-  { name: "Partner 5", logo: "/partner5.png" },
-  { name: "Partner 6", logo: "/partner6.png" },
-  { name: "Partner 7", logo: "/partner7.png" },
-  { name: "Partner 8", logo: "/partner8.png" },
 ];
 
 export default function TrustedPartnersSlider() {

@@ -19,12 +19,12 @@ const slides = [
       "High-quality branding that makes your business stand out in any environment.",
   },
   {
-    image: "/man-trucks.jpg",
+    image: "/logistics5.jpeg",
     headline: "Trusted Logistics Across Borders",
     subtitle: "Safe and reliable transport of goods in and out of the country.",
   },
   {
-    image: "/hybrid-uv-led-flatbed-printer.jpg",
+    image: "/projects/IMG-20250311-WA0039.jpg",
     headline: "Innovative Printing Services",
     subtitle:
       "From business cards to billboards – we deliver quality and consistency.",

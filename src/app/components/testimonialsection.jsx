@@ -12,21 +12,21 @@ const testimonials = [
     role: "Biker",
     feedback:
       "Working with Tmucheki Investments has been an amazing experience. Their team is professional, fast, and delivered high-quality signage for my business.",
-    img: "/avatar1.jpg",
+    img: "/person.png",
   },
   {
     name: "Sarah Chikonde",
     role: "Entrepreneur",
     feedback:
       "I loved their printing services! The branding materials were top-notch and really helped my company stand out.",
-    img: "/avatar2.jpg",
+    img: "/person.png",
   },
   {
     name: "John Mutsvairo",
     role: "Logistics Manager",
     feedback:
       "Their truck logistics service is very reliable. Always on time, safe, and efficient. Highly recommended!",
-    img: "/avatar3.jpg",
+    img: "/person.png",
   },
 ];
 
