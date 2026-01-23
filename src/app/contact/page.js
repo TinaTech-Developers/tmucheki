@@ -185,7 +185,7 @@ export default function ContactPage() {
 
             <div className="flex items-center gap-4">
               <FiPhone className="w-6 h-6 text-blue-400" />
-              <span>+263 77 123 4567</span>
+              <span>+263 78 693 5308 | +263 77 349 7946</span>
             </div>
 
             <div className="flex items-center gap-4">
